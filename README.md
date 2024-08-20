@@ -27,7 +27,8 @@ La implementacion en el codigo esta realizada como se encuentra en el diagrama, 
 ### Compuerta OR
 Esta compuerta or lo que principalmente hace es revisar si alguna de sus entradas tiene un 1, para de este modo mostrar como salida un uno, a continuacion se muestra su tabla de verdad con su respectivo simbolo
 
-![image](https://github.com/user-attachments/assets/9ac0ef7e-4503-4f19-8465-f0d66669ff06)
+![image](https://github.com/user-attachments/assets/fade2622-14c4-4e35-b268-3a856c4a983f)
+
 
 La implementacion en el codigo esta basada a partir de 3 compuertas nand interconectadas de la siguiente manera, de este modo a partir de esta combinacion se logra obtener una compuerta OR
 
