@@ -42,7 +42,8 @@ La siguiente compuerta llamada OR exclusiva o abreviado XOR funciona muy similar
 
 La implementacion en el codigo esta basada a partir de una compuerta or, una compuerta and y una compuerta nand interconectadas de la siguiente manera para funcionar correctamente como una compuerta XOR
 
-![image](https://github.com/user-attachments/assets/14482d09-0a91-4f21-8e83-60db1e7fc5e5)
+![image](https://github.com/user-attachments/assets/8cac0f7b-8e7f-49c2-9fa9-8872bdcae13c)
+
 
 
 
