@@ -37,7 +37,8 @@ La implementacion en el codigo esta basada a partir de 3 compuertas nand interco
 ### Compuerta XOR
 La siguiente compuerta llamada OR exclusiva o abreviado XOR funciona muy similar a la compuerta OR con la diferencia de que cuando sus dos entradas son 1, su salida sera 0 por tener sus dos entradas iguales, a continuacion la tabla de verdad y su respectivo simbolo
 
-![image](https://github.com/user-attachments/assets/6fd4763e-9344-489b-aa92-a4aa469ee2f3)
+![image](https://github.com/user-attachments/assets/9392149e-e5b9-47a3-8215-ae3b4368cc34)
+
 
 La implementacion en el codigo esta basada a partir de una compuerta or, una compuerta and y una compuerta nand interconectadas de la siguiente manera para funcionar correctamente como una compuerta XOR
 
