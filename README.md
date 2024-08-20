@@ -6,7 +6,7 @@ Las compuertas lógicas son componentes fundamentales en la electrónica digital
 
 Para esta segunda parte de la primera practica realizamos el proyecto 01 del curso Nand2Tetris en donde implementamos las principales y mas importantes compuertas logicas que son la base para el funcionamiento de un computador, en lenguaje HDL partiendo de la compuerta base una compuerta Nand, a partir de esta veremos como las diferentes combinaciones de esta compuerta llevaran a la construccion de todas las demas compuertas necesarias
 
-### Compuerta Not 
+### Compuerta NOT
 
 Esta es la compuerta not, lo que hace principalmente esta compuerta es invertir su entrada
 ![image](https://github.com/user-attachments/assets/8eefc3f9-806d-4da0-91a6-ca552624d115)
@@ -15,4 +15,21 @@ La implementacion en el codigo esta realizada como se encuentra en el diagrama, 
 
 ![image](https://github.com/user-attachments/assets/de4ea7df-16c1-41c2-83ed-d16c84b5166e)
 
+### Compuerta AND
+Esta compuerta AND, lo que hace el revisar las dos entradas y su salida es 1 solamente si ambas entradas son 1
+![image](https://github.com/user-attachments/assets/16f1a4dd-48fe-4b02-a682-50a59fd8305a)
+
+
+La implementacion en el codigo esta realizada como se encuentra en el diagrama, lo hacemos a partir de una compuerta not que ya fue previamente implementada y una compuerta nand, basicamente tiene el mismo funcionamiento de la nand pero invertimos su salida con una not
+
+![image](https://github.com/user-attachments/assets/7bb1dd6e-85c0-4d03-8746-0fc5613cdd6a)
+
+### Compuerta OR
+Esta compuerta or lo que principalmente hace es revisar si alguna de sus entradas tiene un 1, para de este modo mostrar como salida un uno, a continuacion se muestra su tabla de verdad con su respectivo simbolo
+
+![image](https://github.com/user-attachments/assets/9ac0ef7e-4503-4f19-8465-f0d66669ff06)
+
+La implementacion en el codigo esta basada a partir de 3 compuertas nand interconectadas de la siguiente manera, de este modo a partir de esta combinacion se logra obtener una compuerta OR
+
+![image](https://github.com/user-attachments/assets/3e2d8a57-2c62-43fd-a37d-f08228df4944)
 
