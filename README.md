@@ -44,7 +44,7 @@ La implementacion en el codigo esta basada a partir de una compuerta or, una com
 
 ![image](https://github.com/user-attachments/assets/8cac0f7b-8e7f-49c2-9fa9-8872bdcae13c)
 
-### Multiplexor
+### MULTIPLEXOR
 
 El multiplexor de dos entradas selecciona entre dos señales de entrada usando un selector. Si el selector esta en 0, envia la primera entrada a la salida, si esta en 1, envia la segunda entrada. Es como un interruptor que elige cual de las dos señales usar.
 
@@ -55,7 +55,7 @@ La implementacion en el codigo esta basada a partir de una compuerta not, una co
 
 ![image](https://github.com/user-attachments/assets/44765588-b17f-49bd-ba4e-7c9790b80775)
 
-### Demultiplexor
+### DEMULTIPLEXOR
 
 Un demultiplexor toma una señal de entrada y la envia a una de varias salidas, controlado por un señal de seleccion. Si se tiene una entrada y dos controles, el demultiplexor usa los controles para decidir a cual de las salidas enviar la entrada. Es como un distribuidor que envia la misma señal a uno de varios destinos.
 
@@ -64,5 +64,41 @@ Un demultiplexor toma una señal de entrada y la envia a una de varias salidas, 
 La implementacion en el codigo esta basada a partir de una compuerta not, y dos compuertas and que realizando la siguiente combinacion logras generar un demultiplexor
 
 ![image](https://github.com/user-attachments/assets/f2dce5d6-c08c-47ad-a95f-42c6afbe9863)
+
+### NOT16
+
+Este chip funciona practicamente igual que la compuerta not, su diferencia esta en que no solamente toma 1 bit como entrada y produce 1 bit de salida, sino que obtiene 16 bits de entrada y 16 bits de salida, invirtiendo bit por bit 
+
+![image](https://github.com/user-attachments/assets/fab75ce6-02da-498b-9bac-b314bcee814e)
+
+Para la implementacion de esta compuerta utilizamos lenguaje de arreglos "[]" para indicar la posicion de cada bit y pasarlo por una compuerta not bit por bit
+
+### AND16
+
+Este chip funciona exactamente igual que las compuertas and, la diferencia es que tendra para este caso 32 bits de entrada y 16 bits de salida, el funcionamiento es toma de cada posicion el par de bits y los pasa por la compuerta and realizando la respectiva operacion par por par
+
+![image](https://github.com/user-attachments/assets/b31081f2-6ec2-4874-bb02-0ee933ff4dcf)
+
+### OR16
+
+Esta compuerta funciona exactamente igual que las compuertas or, la diferencia es que tendra para este caso 32 bits de entrada y 16 bits de salida, el funcionamiento es toma de cada posicion el par de bits y los pasa por la compuerta or realizando la respectiva operacion par por par
+
+![image](https://github.com/user-attachments/assets/1f0c45cb-d2cd-4e38-9871-325dc9bdeae7)
+
+### MUX16
+
+Este tipo de multiplexor al igual que el hermano menor de acuerdo a su selector producira la salida de entrada, aqui funciona exactamente igual pero tomando 32 bits como entrada 16 para cada entrada pero evaluandolos individualmente por pares, y utilizando el selector que se le asigne
+
+![image](https://github.com/user-attachments/assets/e968124b-18da-4567-9998-e86de5768449)
+
+### OR8WAY
+
+Este chip funciona basicamente como una compuerta or solo que no tomando 2 entradas sino 8 entradas, a diferencia del OR16 este no evalua par por par si no que evalua todas sus entradas de manera paralela
+
+![image](https://github.com/user-attachments/assets/faa27000-da95-4733-90f3-26db6edea38e)
+
+La implementacion en el codigo esta realizada de la siguiente manera en forma de cascada por lo que cada salida alimenta la entrada siguiente y asi sucesivamente hasta completar los 8 bits de entrada
+
+![image](https://github.com/user-attachments/assets/3ca10249-cfeb-4aa6-ae88-6a3aee2ff7b1)
 
 
