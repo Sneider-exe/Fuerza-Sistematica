@@ -55,5 +55,14 @@ La implementacion en el codigo esta basada a partir de una compuerta not, una co
 
 ![image](https://github.com/user-attachments/assets/44765588-b17f-49bd-ba4e-7c9790b80775)
 
+### Demultiplexor
+
+Un demultiplexor toma una señal de entrada y la envia a una de varias salidas, controlado por un señal de seleccion. Si se tiene una entrada y dos controles, el demultiplexor usa los controles para decidir a cual de las salidas enviar la entrada. Es como un distribuidor que envia la misma señal a uno de varios destinos.
+
+![image](https://github.com/user-attachments/assets/6a07bcda-782f-4d63-b37e-e6a48bfe4d31)
+
+La implementacion en el codigo esta basada a partir de una compuerta not, y dos compuertas and que realizando la siguiente combinacion logras generar un demultiplexor
+
+![image](https://github.com/user-attachments/assets/f2dce5d6-c08c-47ad-a95f-42c6afbe9863)
 
 
