@@ -32,5 +32,6 @@ Esta compuerta or lo que principalmente hace es revisar si alguna de sus entrada
 
 La implementacion en el codigo esta basada a partir de 3 compuertas nand interconectadas de la siguiente manera, de este modo a partir de esta combinacion se logra obtener una compuerta OR
 
-![image](https://github.com/user-attachments/assets/3e2d8a57-2c62-43fd-a37d-f08228df4944)
+![image](https://github.com/user-attachments/assets/cd53c1f6-1177-4b79-90e2-f2b85ddac092)
+
 
