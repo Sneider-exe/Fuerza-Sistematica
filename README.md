@@ -8,5 +8,9 @@ Para esta segunda parte de la primera practica realizamos el proyecto 01 del cur
 
 ### Compuerta Not 
 
-![image](https://github.com/user-attachments/assets/06244a41-8c4f-4661-8747-68e5c0bbde78)       ![image](https://github.com/user-attachments/assets/8eefc3f9-806d-4da0-91a6-ca552624d115)
+Esta es la compuerta not, lo que hace principalmente esta compuerta es invertir su entrada
+![image](https://github.com/user-attachments/assets/8eefc3f9-806d-4da0-91a6-ca552624d115)
+
+La implementacion en el codigo esta realizada como se encuentra en el diagrama, a partir de una nand en donde las dos entradas de la nand seran las mismas y asi actuara como un inversor
+![image](https://github.com/user-attachments/assets/06244a41-8c4f-4661-8747-68e5c0bbde78)      
 
