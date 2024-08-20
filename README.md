@@ -95,7 +95,8 @@ Este tipo de multiplexor al igual que el hermano menor de acuerdo a su selector 
 
 Este chip funciona basicamente como una compuerta or solo que no tomando 2 entradas sino 8 entradas, a diferencia del OR16 este no evalua par por par si no que evalua todas sus entradas de manera paralela
 
-![image](https://github.com/user-attachments/assets/faa27000-da95-4733-90f3-26db6edea38e)
+![image](https://github.com/user-attachments/assets/9a6b57e8-5d11-44a9-bc95-a35fe52ca48c)
+
 
 La implementacion en el codigo esta realizada de la siguiente manera en forma de cascada por lo que cada salida alimenta la entrada siguiente y asi sucesivamente hasta completar los 8 bits de entrada
 
