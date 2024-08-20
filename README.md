@@ -44,6 +44,16 @@ La implementacion en el codigo esta basada a partir de una compuerta or, una com
 
 ![image](https://github.com/user-attachments/assets/8cac0f7b-8e7f-49c2-9fa9-8872bdcae13c)
 
+### Multiplexor
+
+El multiplexor de dos entradas selecciona entre dos señales de entrada usando un selector. Si el selector esta en 0, envia la primera entrada a la salida, si esta en 1, envia la segunda entrada. Es como un interruptor que elige cual de las dos señales usar.
+
+![image](https://github.com/user-attachments/assets/dfa84607-4f4a-4577-8cd5-da16c1b030b2)
+
+
+La implementacion en el codigo esta basada a partir de una compuerta not, una compuerta or y dos compuertas and, y estan interconectadas de la siguiente manera 
+
+![image](https://github.com/user-attachments/assets/44765588-b17f-49bd-ba4e-7c9790b80775)
 
 
 
