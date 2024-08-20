@@ -8,5 +8,5 @@ Para esta segunda parte de la primera practica realizamos el proyecto 01 del cur
 
 ### Compuerta Not 
 
-![image](https://github.com/user-attachments/assets/06244a41-8c4f-4661-8747-68e5c0bbde78)               ![image](https://github.com/user-attachments/assets/8eefc3f9-806d-4da0-91a6-ca552624d115)
+![image](https://github.com/user-attachments/assets/06244a41-8c4f-4661-8747-68e5c0bbde78)       ![image](https://github.com/user-attachments/assets/8eefc3f9-806d-4da0-91a6-ca552624d115)
 
