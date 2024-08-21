@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Xor.hdl
+/**
+ * Exclusive-or gate:
+ * if ((a and Not(b)) or (Not(a) and b)) out = 1, else out = 0
+ */
+ /** Para la implementacion de la compuerta XOR utilizaremos una compuerta OR previamente construida,
+ **Una compuerta Nand y una compuerta AND*/
+CHIP Xor {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+	Or(a=a, b=b, out=outOr); // Usamos un wire llamado outOr, la salida de esta compuerta OR
+	Nand(a=a, b=b, out=nandOut); // Usamos un wire llamado nandOut, la salida de esta compuerta Nand
+	And(a=outOr, b=nandOut, out=out); // Conectamos los wires a las entradas de la And y la salida es out
+}

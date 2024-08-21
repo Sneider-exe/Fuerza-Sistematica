@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Or.hdl
+/**
+ * Or gate:
+ * if (a or b) out = 1, else out = 0 
+ */
+CHIP Or {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    // La compuerta or la podemos realizar en base a compuertas Nand de la siguiente manera:
+	Nand(a=a, b=a, out=nandOut1); // Utilizamos un wire llamado nandOut1 para conectarlo a la ultima compuerta Nand
+	Nand(a=b, b=b, out=nandOut2);  // Utilizamos un wire llamado nandOut2 para conectarlo a la ultima compuerta Nand
+	Nand(a=nandOut1, b=nandOut2, out=out); // Utilizamos los previos wire de las salidas de las Nand para dar el resultado final, simulando una 
+											//compuerta OR
+}

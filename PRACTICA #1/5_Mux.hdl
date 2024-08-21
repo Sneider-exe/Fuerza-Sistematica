@@ -1,0 +1,21 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux.hdl
+/** 
+ * Multiplexor:
+ * if (sel = 0) out = a, else out = b
+ */
+ /** Hacemos uso de dos compuertas and, un inversor y una compuerta OR*/
+ // De este modo podremos simular un multiplexor
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    Not(in=sel, out=outNot);
+	And(a=a, b=outNot, out=andOut1); // Utilizamos un wire andOut1 que da como resultado [a AND Not(sel)]
+	And(a=b, b=sel, out=andOut2); // Utilizamos un wire andOut2 que da como resultado [b AND sel]
+	Or(a=andOut1, b=andOut2, out=out); // Le damos como entrada a la compuerta OR las previas salidas de las compuertas AND dando como resultado
+										// [(a AND Not(sel) OR (b AND sel)] y esa es la salida del multiplexor
+}
