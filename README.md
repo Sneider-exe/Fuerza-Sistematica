@@ -102,4 +102,14 @@ La implementacion en el codigo esta realizada de la siguiente manera en forma de
 
 ![image](https://github.com/user-attachments/assets/3ca10249-cfeb-4aa6-ae88-6a3aee2ff7b1)
 
+### Mux8Way16
+
+Mux8Way16 es un multiplexor de 8 vías de 16 bits, utilizado en diseño digital para seleccionar una de entre ocho entradas de 16 bits. 8 entradas de 16 bits: Cada una de estas entradas puede proporcionar un valor de 16 bits. 3 entradas de selección (selectores): Estas se utilizan para seleccionar cuál de las 8 entradas será la salida del multiplexor.3 entradas de selección (selectores): Estas se utilizan para seleccionar cuál de las 8 entradas será la salida del multiplexor.
+
+![image](https://user-images.githubusercontent.com/91504420/222692666-b7d4c997-7ce1-4f39-bb33-4d5af16b6c7a.png)
+
+Para un Mux8Way16, la tabla de verdad simplificada sería:
+
+![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMmpAq6P4LA9CplkFbOylTaNgg3_dRgKw0b7pxByToE05WZv_DDYoqB9j0QG4v9lrzRHizsGKh8dpKlkImlSq6s6bLz_Cf6Hs3eZeSznaNpqV-gdSdGHR86ropaK5D7q_a6EZfjdahvw/s1600/8way16bitMux.png)
+
 
