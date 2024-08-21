@@ -110,7 +110,12 @@ Mux4Way16 es un multiplexor de 4 vías de 16 bits. Este componente digital selec
 
 La tabla de verdad para un Mux4Way16 es la siguiente:
 
-![image](https://drive.google.com/file/d/1rCqMTL9wEtzBfd8fHEG85JoiyWcf7jJQ/view?usp=sharing).
+| S1 | S0 | Salida (Y)  |
+|----|----|-------------|
+| 0  | 0  | D0          |
+| 0  | 1  | D1          |
+| 1  | 0  | D2          |
+| 1  | 1  | D3          |
 
 ### Mux8Way16
 
