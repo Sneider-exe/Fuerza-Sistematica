@@ -102,6 +102,16 @@ La implementacion en el codigo esta realizada de la siguiente manera en forma de
 
 ![image](https://github.com/user-attachments/assets/3ca10249-cfeb-4aa6-ae88-6a3aee2ff7b1)
 
+### Mux4Way16
+
+Mux4Way16 es un multiplexor de 4 vías de 16 bits. Este componente digital selecciona una de entre cuatro entradas de 16 bits y la dirige a la salida. 4 entradas de 16 bits: Cada una de estas entradas puede proporcionar un dato de 16 bits. 2 entradas de selección (selectores): Estas se utilizan para seleccionar cuál de las 4 entradas será la salida del multiplexor. 1 salida de 16 bits: Esta es la línea de salida que lleva el valor de la entrada seleccionada.
+
+![image](https://user-images.githubusercontent.com/91504420/222689584-8a9db23f-ccba-435e-b298-238c402a1965.png).
+
+La tabla de verdad para un Mux4Way16 es la siguiente:
+
+![image](https://drive.google.com/file/d/1rCqMTL9wEtzBfd8fHEG85JoiyWcf7jJQ/view?usp=sharing).
+
 ### Mux8Way16
 
 Mux8Way16 es un multiplexor de 8 vías de 16 bits, utilizado en diseño digital para seleccionar una de entre ocho entradas de 16 bits. 8 entradas de 16 bits: Cada una de estas entradas puede proporcionar un valor de 16 bits. 3 entradas de selección (selectores): Estas se utilizan para seleccionar cuál de las 8 entradas será la salida del multiplexor.3 entradas de selección (selectores): Estas se utilizan para seleccionar cuál de las 8 entradas será la salida del multiplexor.
