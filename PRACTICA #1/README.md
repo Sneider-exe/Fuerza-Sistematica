@@ -139,7 +139,21 @@ Para el DMux4Way, la tabla de verdad quedaria se la forma:
 | 1  | 0  | c           |
 | 1  | 1  | d           |
 
-###DMux8Way
+### DMux8Way
+|out1|out2|out3| Salidas     |
+|----|----|----|-------------|
+| 0  | 0  | 0  | a           |
+| 0  | 0  | 1  | b           |
+| 0  | 1  | 0  | c           |
+| 0  | 1  | 1  | d           |
+| 1  | 0  | 0  | e           |
+| 1  | 0  | 1  | f           |
+| 1  | 1  | 0  | g           |
+| 1  | 1  | 1  | h           |
+El DMux8Way es un dispositivo que distribuye una única señal de entrada (in) hacia una de ocho posibles salidas (a, b, c, d, e, f, g, h) según el estado de tres señales de control (out1, out2 y out3). Para lograr este direccionamiento, el DMux8Way emplea una combinación de puertas lógicas y demultiplexores más pequeños. Inicialmente, la señal out1 es invertida mediante una puerta NOT, y luego se realiza una operación AND entre la señal de entrada y la señal invertida, lo que genera una señal llamada Salidas. Esta señal es la que determina a cuál de los dos demultiplexores de 4 vías (DMux4Way) se dirigirá la entrada, según los valores de out2 y out3.
+
+Simultáneamente, la señal de entrada se combina con out1 a través de otra operación AND, produciendo una señal diferente, Salidas, que se utiliza para direccionar la entrada hacia el segundo demultiplexor de 4 vías, nuevamente en función de los valores de out2 y out3.
+
 ### ¿Que consideraciones importantes debe tener en cuenta para trabajar con Nand2Tetris?
 
 Trabajar con Nand2Tetris requiere una comprensión integral de la jerarquía de sistemas computacionales, desde la lógica básica de puertas NAND hasta el diseño de un sistema operativo completo. Es crucial entender cómo cada nivel de diseño se construye sobre el anterior para poder integrar los componentes de manera efectiva. La lógica digital es la base de este proyecto, por lo que es fundamental tener un buen dominio de conceptos como puertas lógicas, flip-flops y registros para diseñar circuitos correctamente.
