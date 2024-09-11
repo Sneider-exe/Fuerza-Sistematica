@@ -86,3 +86,6 @@ La ALU toma dos entradas (llamadas operandos), realiza la operación seleccionad
   - Cero: Indica si el resultado es cero.
   - Signo: Indica el signo del resultado (en sistemas que utilizan representación de complemento a dos).
 
+**Implementacion de la ALU**
+
+![image](https://github.com/user-attachments/assets/327f3ed7-e49e-4e6b-b6b7-5d6d221b4d22)
