@@ -49,4 +49,12 @@ El bit de Suma es parte del resultado final en esa posición, mientras que el bi
 
 ![image](https://github.com/user-attachments/assets/e04d8e95-a5a9-4239-a602-5c4e2e781300)
 
+### 16-Bit Incrementer
+
+Este circuito lo que hara es a la entrada que le demos, la cual sera un numero de 16 bits, le sumaremos 1 (un bit) por lo que su implementacion es bastante sencilla ya que usariamos un 
+sumador completo de 16 bits, en donde su primera entrada sera la misma entrada del incrementador, y la segunda entrada sera el numero 1 en formato de 16 bits
+
+### Arithmetic Logic Unit (ALU)
+
+
 
