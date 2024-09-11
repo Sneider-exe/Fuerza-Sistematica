@@ -1,7 +1,3 @@
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/3/a/Register.hdl
 /**
  * 16-bit register:
  * If load is asserted, the register's value is set to in;
@@ -29,5 +25,5 @@ CHIP Register {
     Bit(in= in[13], load=load, out=out[13]);
     Bit(in= in[14], load=load, out=out[14]);
     Bit(in= in[15], load=load, out=out[15]);
-
+    /*Simplemente repetimos la lógica del chip Bit, solo que lo repetimos para cada bit que compone la entrada*/
 }
