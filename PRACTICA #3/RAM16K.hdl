@@ -1,0 +1,48 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/3/b/RAM16K.hdl
+/**
+ * Memory of 16K 16-bit registers.
+ * If load is asserted, the value of the register selected by
+ * address is set to in; Otherwise, the value does not change.
+ * The value of the selected register is emitted by out.
+ */
+CHIP RAM16K {
+    IN in[16], load, address[14];  // Entrada de 16 bits, señal de carga y dirección de 14 bits
+    OUT out[16];  // Salida de 16 bits
+
+    PARTS:
+    // La RAM16K es una memoria de 16K registros, lo que equivale a 16 * 1024 = 16384 posiciones de memoria.
+    // Vamos a dividirla en 4 bloques de RAM4K, ya que 4 * 4096 = 16384 registros.
+
+    // Crear 4 bloques de RAM4K.
+    RAM4K(a=in, load=loadA, address=address[11..0], out=outA);  // Primer bloque de RAM4K
+    RAM4K(a=in, load=loadB, address=address[11..0], out=outB);  // Segundo bloque de RAM4K
+    RAM4K(a=in, load=loadC, address=address[11..0], out=outC);  // Tercer bloque de RAM4K
+    RAM4K(a=in, load=loadD, address=address[11..0], out=outD);  // Cuarto bloque de RAM4K
+
+    // Los 12 bits menos significativos de la dirección (address[11..0]) 
+    // se utilizan para seleccionar la ubicación dentro de cada bloque de RAM4K.
+
+    // Los 2 bits más significativos de la dirección (address[13..12]) 
+    // se utilizan para seleccionar cuál de los 4 bloques de RAM4K será activado.
+
+    // Usamos un DMux4Way para distribuir la señal de carga (`load`) al bloque correcto.
+    // Los 2 bits más significativos de la dirección (address[13..12]) se usan como selector.
+    DMux4Way(in=load, sel=address[13..12], a=loadA, b=loadB, c=loadC, d=loadD);
+
+    // El DMux4Way toma la señal `load` y la dirige hacia uno de los 4 bloques de RAM4K 
+    // basándose en los 2 bits más significativos de la dirección. Esto asegura que solo 
+    // un bloque de RAM4K cargue los datos en un momento dado.
+
+    // Seleccionamos la salida correcta de los bloques RAM4K.
+    // Usamos un Mux4Way16 que selecciona cuál de las salidas de los bloques RAM4K
+    // se debe pasar a la salida final de `RAM16K`.
+    // Los 2 bits más significativos de `address` (address[13..12]) se usan como selector.
+    Mux4Way16(a=outA, b=outB, c=outC, d=outD, sel=address[13..12], out=out);
+
+    // El Mux4Way16 toma las salidas de los 4 bloques de RAM4K y selecciona una 
+    // basándose en los 2 bits más significativos de `address`. Así, se emite la salida 
+    // correcta correspondiente al bloque de memoria adecuado.
+}

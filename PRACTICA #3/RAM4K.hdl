@@ -1,0 +1,53 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/3/b/RAM4K.hdl
+/**
+ * Memory of 4K 16-bit registers.
+ * If load is asserted, the value of the register selected by
+ * address is set to in; Otherwise, the value does not change.
+ * The value of the selected register is emitted by out.
+ */
+CHIP RAM4K {
+    IN in[16], load, address[12];  // Entrada de 16 bits, señal de carga y dirección de 12 bits
+    OUT out[16];  // Salida de 16 bits
+
+    PARTS:
+    // La RAM4K es memoria de 4K registros, lo que significa 4096 posiciones de memoria.
+    // Esto se divide en 8 bloques de RAM512 (512 * 8 = 4096).
+
+    // Crear 8 bloques de RAM512 para cada parte de la memoria.
+    RAM512(a=in, load=loadA, address=address[9..0], out=outA);  // Primer bloque de RAM512
+    RAM512(a=in, load=loadB, address=address[9..0], out=outB);  // Segundo bloque de RAM512
+    RAM512(a=in, load=loadC, address=address[9..0], out=outC);  // Tercer bloque de RAM512
+    RAM512(a=in, load=loadD, address=address[9..0], out=outD);  // Cuarto bloque de RAM512
+    RAM512(a=in, load=loadE, address=address[9..0], out=outE);  // Quinto bloque de RAM512
+    RAM512(a=in, load=loadF, address=address[9..0], out=outF);  // Sexto bloque de RAM512
+    RAM512(a=in, load=loadG, address=address[9..0], out=outG);  // Séptimo bloque de RAM512
+    RAM512(a=in, load=loadH, address=address[9..0], out=outH);  // Octavo bloque de RAM512
+
+    // La dirección de la RAM4K tiene 12 bits. Los 10 bits menos significativos (address[9..0]) 
+    // se utilizan para seleccionar la dirección dentro de cada bloque de RAM512, 
+    // ya que RAM512 maneja direcciones de 10 bits.
+
+    // Los 3 bits más significativos de la dirección (address[12..10]) 
+    // se utilizan para seleccionar cuál de los 8 bloques de RAM512 será activado.
+
+    // Utilizamos un DMux8Way para distribuir la señal de carga (`load`) al bloque correcto.
+    // Los 3 bits más significativos de `address` (address[12..10]) se usan como selector.
+    DMux8Way(in=load, sel=address[12..10], a=loadA, b=loadB, c=loadC, d=loadD, e=loadE, f=loadF, g=loadG, h=loadH);
+
+    // El DMux8Way toma la señal `load` y la dirige hacia uno de los 8 bloques de RAM512 
+    // según el valor de los bits más significativos de la dirección. Esto asegura que solo 
+    // uno de los bloques de RAM512 cargue los datos en un momento dado.
+
+    // Ahora necesitamos seleccionar la salida del bloque RAM512 correcto.
+    // Utilizamos un Mux8Way16 que seleccionará cuál de las salidas de los bloques RAM512
+    // se debe pasar a la salida final de `RAM4K`.
+    // Los mismos 3 bits más significativos de `address` (address[12..10]) se usan como selector.
+    Mux8Way16(a=outA, b=outB, c=outC, d=outD, e=outE, f=outF, g=outG, h=outH, sel=address[12..10], out=out);
+
+    // El Mux8Way16 toma las salidas de los 8 bloques de RAM512 y selecciona una 
+    // basándose en los 3 bits más significativos de `address`. Así, se emite la salida 
+    // correcta correspondiente al bloque de memoria adecuado.
+}
