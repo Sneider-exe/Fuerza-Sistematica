@@ -22,5 +22,5 @@ La salida ACARREO es el resultado de la operación AND entre las dos entradas A 
  
   ![image](https://github.com/user-attachments/assets/47c16b4e-0daf-4b47-b708-53e558a6e8ca)
 
-
+### 
 
