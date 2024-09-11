@@ -82,7 +82,7 @@ La ALU toma dos entradas (llamadas operandos), realiza la operación seleccionad
 2. Seleccion de operacion: Un conjunto de señales de control selecciona qué operación debe realizar la ALU. Estas señales determinan si la ALU realizará una suma, resta, operación lógica, etc.
 3. Ejecutar la operacion: Basado en las señales de control, la ALU utiliza circuitos internos para realizar la operación aritmética o lógica correspondiente. Por ejemplo, para una suma, la ALU utiliza sumadores completos; para una operación lógica AND, utiliza compuertas AND.
 4. La ALU produce un resultado binario basado en la operación realizada. Además, puede generar señales adicionales como:
-Acarreo: Indica si hubo un desbordamiento en operaciones aritméticas.
-Cero: Indica si el resultado es cero.
-Signo: Indica el signo del resultado (en sistemas que utilizan representación de complemento a dos).
+  - Acarreo: Indica si hubo un desbordamiento en operaciones aritméticas.
+  - Cero: Indica si el resultado es cero.
+  - Signo: Indica el signo del resultado (en sistemas que utilizan representación de complemento a dos).
 
