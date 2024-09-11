@@ -39,5 +39,7 @@ En este circuito, se combinan dos circuitos sumadores simples (half adder) utili
 El MSB (bit más significativo) está representado por el bit final de 'Acarreo'
 
 
+### 16-Bit Adder
+
 
 
