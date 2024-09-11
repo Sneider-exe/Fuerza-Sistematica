@@ -18,7 +18,7 @@ La salida ACARREO es el resultado de la operación AND entre las dos entradas A 
 
   ![image](https://github.com/user-attachments/assets/34bb882b-d637-4dff-991d-fe7964fa91bc)
 
-  - **Implentacion Half Adder y Diagrama**
+- **Implentacion Half Adder y Diagrama**
  
   ![image](https://github.com/user-attachments/assets/47c16b4e-0daf-4b47-b708-53e558a6e8ca)
 
