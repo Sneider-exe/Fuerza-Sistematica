@@ -51,10 +51,38 @@ El bit de Suma es parte del resultado final en esa posición, mientras que el bi
 
 ### 16-Bit Incrementer
 
-Este circuito lo que hara es a la entrada que le demos, la cual sera un numero de 16 bits, le sumaremos 1 (un bit) por lo que su implementacion es bastante sencilla ya que usariamos un 
+Este circuito lo que hara es que la entrada que se ingrese, la cual sera un numero de 16 bits, se le suma 1 (un bit) por lo que su implementacion es bastante sencilla ya que se usa un 
 sumador completo de 16 bits, en donde su primera entrada sera la misma entrada del incrementador, y la segunda entrada sera el numero 1 en formato de 16 bits
 
 ### Arithmetic Logic Unit (ALU)
 
+La ALU (Unidad Aritmético-Lógica) es un componente fundamental en las computadoras. Su función principal es realizar operaciones aritméticas y lógicas sobre datos binarios.
+La ALU toma dos entradas (llamadas operandos), realiza la operación seleccionada y produce un resultado. Además, puede generar señales adicionales, como el acarreo o los indicadores de resultado (por ejemplo, si la operación resultó en cero o en un valor negativo).
 
+**Funciones de la ALU**
+
+- Operaciones aritmeticas
+  
+ - ***Suma***: Calcula la suma de dos numeros binarios
+ - ***Resta***: Calcula la resta de dos numeros binarios (para este caso se usa el complemento a 2)
+ - ***Multiplicacion y division***: Para este caso no se tendra multiplicacion ni division en la ALU implementada pero existen ALUs que si la tienen
+   
+- Operaciones Lógicas
+
+  - ***AND***: Realiza la operacion AND entre dos operandos
+  - ***OR***: Realiza la operacion OR entre dos operandos
+  - ***XOR***: Realiza una operacion XOR entre dos operandos
+  - ***NOT***: Realiza una operacion NOT inviritiendo la entrada de los operandos
+    
+ - Operaciones como desplazamiento (shift) desplazando los bits de un operando hacia la izquierda o derecha
+ - Comparacion: Comparando dos operandos para ver si son iguales
+
+**Como funciona la ALU**
+1. Entradas: La ALU recibe dos operandos binarios de entrada. Estos operandos son los datos sobre los que se realizarán las operaciones.
+2. Seleccion de operacion: Un conjunto de señales de control selecciona qué operación debe realizar la ALU. Estas señales determinan si la ALU realizará una suma, resta, operación lógica, etc.
+3. Ejecutar la operacion: Basado en las señales de control, la ALU utiliza circuitos internos para realizar la operación aritmética o lógica correspondiente. Por ejemplo, para una suma, la ALU utiliza sumadores completos; para una operación lógica AND, utiliza compuertas AND.
+4. La ALU produce un resultado binario basado en la operación realizada. Además, puede generar señales adicionales como:
+Acarreo: Indica si hubo un desbordamiento en operaciones aritméticas.
+Cero: Indica si el resultado es cero.
+Signo: Indica el signo del resultado (en sistemas que utilizan representación de complemento a dos).
 
