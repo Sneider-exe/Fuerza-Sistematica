@@ -22,3 +22,22 @@ La lógica aritmética, o combinacional, se refiere a circuitos cuyo comportamie
 
 ### Lógica Secuencial:
 La lógica secuencial, por otro lado, incorpora elementos de memoria. En estos circuitos, la salida depende no solo de las entradas actuales sino también del estado anterior del sistema. Los flip-flops y los registros son ejemplos de lógica secuencial. Estos circuitos están sincronizados con un reloj, lo que les permite "retener" información pasada, lo que es fundamental para operaciones como el almacenamiento de datos en memoria.
+
+## BONUS: ¿Qué tipo de unidades aritmético lógicas existen?
+
+Las Unidades Aritmético-Lógicas (ALU) son componentes fundamentales de los procesadores, ya que realizan operaciones aritméticas y lógicas básicas. Existen varios tipos de ALUs, que varían en términos de su complejidad y funciones:
+
+### 1. ALU Simple o Básica
+Realiza operaciones aritméticas básicas como suma, resta y operaciones lógicas simples como AND, OR, NOT, y XOR. Se encuentra en procesadores de bajo rendimiento o en microcontroladores donde no se requiere un procesamiento avanzado.
+### 2. ALU Multipropósito
+Además de las operaciones básicas, puede realizar multiplicaciones, divisiones, desplazamientos de bits (shift) y operaciones de comparación. Se encuentra en procesadores más avanzados o en sistemas que requieren mayor capacidad de procesamiento, como CPUs para computadoras de propósito general.
+### 3. ALU Paralela
+Realiza varias operaciones aritméticas o lógicas en paralelo, lo que permite acelerar el procesamiento al dividir las tareas. Utilizada en procesadores de alto rendimiento, como los utilizados en servidores y supercomputadoras, donde la velocidad es crítica.
+### 4. ALU de Precisión Extendida
+Soporta operaciones con números de mayor tamaño (más bits) o mayor precisión, como números en coma flotante. Se usa en procesadores de alto rendimiento y en aplicaciones que requieren cálculos precisos, como la computación científica o el procesamiento de gráficos.
+### 5. ALU SIMD (Single Instruction, Multiple Data)
+Puede aplicar una operación aritmética o lógica a múltiples datos en paralelo, lo que es ideal para procesar grandes volúmenes de datos simultáneamente. Utilizada en procesadores gráficos (GPUs) y en aplicaciones de procesamiento de señales o multimedia, donde se requieren cálculos repetidos sobre matrices de datos.
+### 6. ALU en Punto Flotante
+Realiza operaciones con números en coma flotante (representación de números reales). Incluye soporte para operaciones aritméticas de mayor precisión, como suma y multiplicación en formato de punto flotante. Se encuentra en procesadores de propósito general y en CPUs para computación científica o aplicaciones gráficas donde es esencial el manejo de números no enteros.
+### 7. ALU Vectorial
+Similar a la ALU SIMD, pero especializada en procesar vectores de datos, lo que es muy útil en computación gráfica y en simulaciones físicas. Común en procesadores de alto rendimiento utilizados para cálculos científicos y gráficos.
