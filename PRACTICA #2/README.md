@@ -91,56 +91,56 @@ La ALU toma dos entradas (llamadas operandos), realiza la operación seleccionad
 ![image](https://github.com/user-attachments/assets/327f3ed7-e49e-4e6b-b6b7-5d6d221b4d22)
 
 
-Esta ALU (Unidad Aritmética Lógica) realiza varias operaciones sobre dos entradas de 16 bits,  x  y  y , dependiendo de un conjunto de señales de control ( zx ,  nx ,  zy ,  ny ,  f , y  no ). Las operaciones pueden ser lógicas (como AND, NOT) o aritméticas (como suma, resta). Además, se calculan dos banderas ( zr  y  ng ) para indicar si el resultado es cero o negativo.
+Esta ALU (Unidad Aritmética Lógica) realiza varias operaciones sobre dos entradas de 16 bits, x y y, dependiendo de un conjunto de señales de control (zx, nx, zy, ny, f, y no). Las operaciones pueden ser lógicas (como AND, NOT) o aritméticas (como suma, resta). Además, se calculan dos banderas (zr y ng) para indicar si el resultado es cero o negativo.
 
-1. **Selección de la entrada  x  y  y **
+1. **Selección de la entrada x y y**
 
-- ** zx  y  zy **: Si estas señales son  1 , la entrada correspondiente se fuerza a  0 . Esto se implementa con multiplexores ( Mux16 ) donde se selecciona si se usa  x  o  y , o si se reemplazan por  0 .
-- ** nx  y  ny **: Si estas señales son  1 , se niega el valor de  x  o  y . La negación se realiza bit a bit usando el componente  Not16  para invertir los bits. Luego, el resultado pasa por otro multiplexor para decidir si se debe tomar el valor negado o no.
+- **zx y zy**: Si estas señales son 1, la entrada correspondiente se fuerza a 0. Esto se implementa con multiplexores (Mux16) donde se selecciona si se usa x o y, o si se reemplazan por 0.
+- **nx y ny**: Si estas señales son 1, se niega el valor de x o y. La negación se realiza bit a bit usando el componente Not16 para invertir los bits. Luego, el resultado pasa por otro multiplexor para decidir si se debe tomar el valor negado o no.
 
-   hdl
+``` hdl
 Mux16(a=x, b=false, sel=zx, out=xMultiOut); // zx: Si zx=1, x=0
 Mux16(a=y, b=false, sel=zy, out=yMultiOut); // zy: Si zy=1, y=0
 Not16(in=xMultiOut, out=negX);              // negación bit a bit de x
 Mux16(a=xMultiOut, b=negX, sel=nx, out=procX); // selecciona si tomar x o !x
 Not16(in=yMultiOut, out=negY);              // negación bit a bit de y
 Mux16(a=yMultiOut, b=negY, sel=ny, out=procY); // selecciona si tomar y o !y
-   
+```
 
 2. **Operaciones Aritméticas y Lógicas**
 
-- ** f **: Si  f = 1 , la ALU realiza una suma de  x  e  y  utilizando una operación de suma en complemento a dos ( Add16 ). Si  f = 0 , realiza una operación AND bit a bit entre  x  e  y  ( And16 ). El resultado de estas operaciones se selecciona mediante otro multiplexor ( Mux16 ).
+- **f**: Si f = 1, la ALU realiza una suma de x e y utilizando una operación de suma en complemento a dos (Add16). Si f = 0, realiza una operación AND bit a bit entre x e y (And16). El resultado de estas operaciones se selecciona mediante otro multiplexor (Mux16).
 
-   hdl
+hdl
 And16(a=procX, b=procY, out=andOut);       // Operación AND entre x e y
 Add16(a=procX, b=procY, out=addOut);       // Operación de suma entre x e y
 Mux16(a=andOut, b=addOut, sel=f, out=fOut); // Selección de AND o ADD basado en f
-   
+
 
 3. **Negación del Resultado**
 
-- ** no **: Si esta señal es  1 , se niega el resultado final de la operación seleccionada (es decir, se aplica una negación bit a bit al resultado). Esto se hace con un  Not16 , y luego el multiplexor selecciona si devolver el valor original o su negación.
+- **no**: Si esta señal es 1, se niega el resultado final de la operación seleccionada (es decir, se aplica una negación bit a bit al resultado). Esto se hace con un Not16, y luego el multiplexor selecciona si devolver el valor original o su negación.
 
-   hdl
+hdl
 Not16(in=fOut, out=fNotOut); // Se niega el resultado de la operación
 Mux16(a=fOut, b=fNotOut, sel=no, out=out); // Selección entre el valor y su negación
-   
 
-4. **Cálculo de las banderas  zr  y  ng **
 
-- ** zr  (zero flag)**: Si el resultado final es  0 , la bandera  zr  se establece en  1 . Esto se hace mediante una serie de operaciones OR ( Or8Way  y  Or ) que verifican si alguno de los bits del resultado es  1 . Si todos los bits son  0 , entonces  zr  se establece en  1 .
-- ** ng  (negative flag)**: Esta bandera se establece si el bit más significativo del resultado (el bit 15 en un número de 16 bits) es  1 , lo que indica un número negativo en complemento a dos.
+4. **Cálculo de las banderas zr y ng**
 
-   hdl
+- **zr (zero flag)**: Si el resultado final es 0, la bandera zr se establece en 1. Esto se hace mediante una serie de operaciones OR (Or8Way y Or) que verifican si alguno de los bits del resultado es 1. Si todos los bits son 0, entonces zr se establece en 1.
+- **ng (negative flag)**: Esta bandera se establece si el bit más significativo del resultado (el bit 15 en un número de 16 bits) es 1, lo que indica un número negativo en complemento a dos.
+
+hdl
 Or8Way(in=zr0, out=or1Out);   // Verifica si los primeros 8 bits son 0
 Or8Way(in=zr1, out=or2Out);   // Verifica si los últimos 8 bits son 0
 Or(a=or1Out, b=or2Out, out=or3Out); // Combina ambas comprobaciones
 Not(in=or3Out, out=zr);       // Si el resultado es 0, entonces zr = 1
-   
+
 
 **Flujo de ALU**
 
-a) El valor de  x  y  y  se puede forzar a 0 si  zx  o  zy  son  1 .
+a) El valor de x y y se puede forzar a 0 si zx o zy son 1.
 
 b) Se puede negar x o y si nx o ny son 1.
 
@@ -149,3 +149,4 @@ c) Dependiendo de la señal f, se realiza una operación AND o una suma entre x 
 d) Dependiendo de no, el resultado final puede negarse.
 
 e) Las banderas zr y ng indican si el resultado es 0 o si es negativo, respectivamente.
+
