@@ -30,6 +30,9 @@ La CPU realiza las siguientes funciones:
 
 5. **Señales de Control**: Genera señales de control para gestionar el flujo de datos entre diferentes componentes, como la ALU, los registros y la memoria.
 
+![image](https://github.com/user-attachments/assets/af17d3cd-0687-4bed-a103-b3fc0d7d5a20)
+
+
 ### Componentes Clave
 
 - **Multiplexores (Mux16)**: Se utilizan para seleccionar entre diferentes fuentes de entrada segun las señales de control.
