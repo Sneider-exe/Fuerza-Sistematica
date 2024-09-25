@@ -1,7 +1,7 @@
 
 ### Codigo
 
-El codigo proporcionado define el lenguaje de descripcion de hardware (HDL) para la Unidad Central de Procesamiento (CPU) de la computadora Hack. Esta CPU es responsable de analizar instrucciones binarias y ejecutarlas de acuerdo con la especificacion del lenguaje de maquina Hack. Maneja tanto instrucciones A como instrucciones C, gestionando el control del programa y el procesamiento de datos.
+El codigo realizado en HDL para la Unidad Central de Procesamiento (CPU) de la computadora Hack. Esta CPU es responsable de analizar instrucciones binarias y ejecutarlas de acuerdo con la especificacion del lenguaje de maquina Hack. Maneja tanto instrucciones A como instrucciones C, gestionando el control del programa y el procesamiento de datos.
 
 ### Entradas y Salidas
 
