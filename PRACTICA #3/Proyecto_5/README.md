@@ -1,7 +1,22 @@
+# EXPLICACIÓN LÓGICA EMPLEADA PARA LA CREACIÓN DE LOS CHIPS
+## Memory
+Para la realización de este chip se emplearon diversos componentes:
+- **Entradas:**
+  - `in[16]`: Recibiamos una entrada de 16 bits.
+  - `load`: Es una flag que nos indica si la entrada debe ser registrada en la memoria o no.
+  - `address[16]`: Este vector nos indica la dirección hacía donde debe dirigirse la entrada, cada cierta cantidad de bits nos indicará que actividad se debe realizar.
 
-### Explicacion Unidad Central Procesamiento (CPU)
+- **Salidas:**
+  - `outM[16]`: El valor que se escribira en la memoria.
+### Funcionalidad
+ Se utilizó una DMux4way, utilizando como selecciondor los bits 14 y 15 de la dirección address,, en donde los valores de las salidas a y b se conectan con el load del RAM16K.
+ Las otras dos opciones nos iban a dirigir al Screen y el último wire de sálida no se conecta con ningún otro elemento.
+ Tanto la ram como el screen usaban el resto de la dirección address para colocar la entrada in.
+ Finalmente, volvíamos a tomar los mismos bits que en el Mux para definir realmente que sálida ibamos a tener, si se mostraba lo que se guardo en ram o lo que se muestra en pantalla, o el estado del teclado keyboard.
 
-El codigo realizado en HDL para la Unidad Central de Procesamiento (CPU) de la computadora Hack. Esta CPU es responsable de analizar instrucciones binarias y ejecutarlas de acuerdo con la especificacion del lenguaje de maquina Hack. Maneja tanto instrucciones A como instrucciones C, gestionando el control del programa y el procesamiento de datos.
+## Unidad Central Procesamiento (CPU)
+
+El código realizado en HDL para la Unidad Central de Procesamiento (CPU) de la computadora Hack. Esta CPU es responsable de analizar instrucciones binarias y ejecutarlas de acuerdo con la especificacion del lenguaje de maquina Hack. Maneja tanto instrucciones A como instrucciones C, gestionando el control del programa y el procesamiento de datos.
 
 ### Entradas y Salidas
 
