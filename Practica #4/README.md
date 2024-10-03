@@ -1,20 +1,20 @@
 
 # Proyecto 6: Ensamblador para el computador Hack
 
-Este proyecto consiste en la creacion de un ensamblador que traduce programas escritos en lenguaje ensamblador Hack (.asm) a código máquina binario (.hack). El ensamblador Hack es un lenguaje de bajo nivel que interactua directamente con el hardware del computador Hack.
+Este proyecto consiste en la creacion de un ensamblador que traduce programas escritos en lenguaje ensamblador Hack (.asm) a codigo maquina binario (.hack). El ensamblador Hack es un lenguaje de bajo nivel que interactua directamente con el hardware del computador Hack.
 
 El proyecto se desarrolla en dos pasos:
 
 1. **Paso 1**: Implementar un ensamblador que maneje instrucciones sin simbolos (instrucciones A y C basicas).
 2. **Paso 2**: Extender el programa que hicimos para que sea capaz de traducir simbolos(variables y etiquetas).
 
-El ensamblador leerá un archivo `.asm` de entrada y generará un archivo `.hack` de salida con el código binario.
+El ensamblador leera un archivo `.asm` de entrada y generara un archivo `.hack` de salida con el codigo binario.
 
 ## Com esta hecho el programa
 
 ### Paso 1: Leer el archivo `.asm`
 
-Primero, necesitamos leer el archivo `.asm`, eliminando los comentarios y líneas vacías. La función `read_asm_file` sera la encargada de eso:
+Primero, necesitamos leer el archivo `.asm`, eliminando los comentarios y líneas vacías. La funcion `read_asm_file` sera la encargada de eso:
 
 ```python
 def read_asm_file(file_path):
@@ -26,14 +26,14 @@ def read_asm_file(file_path):
     for line in lines:
         # Quitamos los espacios y comentarios
         line = line.split('//')[0].strip()
-        if line:  # Si la línea no está vacía después de limpiar
+        if line:  # Si la línea no esta vacía despues de limpiar
             clean_lines.append(line)
     return clean_lines
 ```
 
-### Paso 2: Traducción de instrucciones tipo A
+### Paso 2: Traduccion de instrucciones tipo A
 
-Las instrucciones tipo A comienzan con `@` y representan un valor numérico. La función `translate_a_instruction` se encarga de traducirlas a un valor binario de 16 bits.
+Las instrucciones tipo A comienzan con `@` y representan un valor numerico. La funcion `translate_a_instruction` se encarga de traducirlas a un valor binario de 16 bits.
 
 ```python
 def translate_a_instruction(instruction):
@@ -42,11 +42,11 @@ def translate_a_instruction(instruction):
     return '0' + binary_value.zfill(15)  # Aseguramos que tenga 16 bits
 ```
 
-### Paso 3: Traducción de instrucciones tipo C
+### Paso 3: Traduccion de instrucciones tipo C
 
-Las instrucciones tipo C realizan operaciones aritméticas y lógicas. Utilizamos tablas de traducción para convertir las partes de la instrucción (`comp`, `dest`, `jump`) a código binario.
+Las instrucciones tipo C realizan operaciones aritmeticas y logicas. Utilizamos tablas de traduccion para convertir las partes de la instruccion (`comp`, `dest`, `jump`) a codigo binario.
 
-Tablas de traducción:
+Tablas de traduccion:
 
 ```python
 comp_table = {
@@ -89,7 +89,7 @@ jump_table = {
 }
 ```
 
-La función `translate_c_instruction` se encarga de la traducción:
+La funcion `translate_c_instruction` se encarga de la traduccion:
 
 ```python
 def translate_c_instruction(instruction):
@@ -111,7 +111,7 @@ def translate_c_instruction(instruction):
 
 ### Paso 4: Manejo de etiquetas y símbolos
 
-Para manejar etiquetas y variables simbólicas tales como `@R0`, `@OUTPUT_D`, utilizamos una tabla de símbolos con su correspondiente numero.
+Para manejar etiquetas y variables simbolicas tales como `@R0`, `@OUTPUT_D`, utilizamos una tabla de símbolos con su correspondiente numero.
 
 #### Tabla de símbolos:
 
@@ -138,7 +138,7 @@ def first_pass(lines):
             rom_address += 1  # Solo las instrucciones cuentan como direcciones ROM
 ```
 
-#### Segunda pasada: Traducción de instrucciones tipo a y c
+#### Segunda pasada: Traduccion de instrucciones tipo a y c
 
 En la segunda pasada, traducimos las instrucciones A y C, y reemplazamos las etiquetas y variables con las direcciones correctas.
 
@@ -154,7 +154,7 @@ def second_pass(lines):
         if line.startswith('@'):
             symbol = line[1:]
             if symbol.isdigit():
-                machine_code.append(translate_a_instruction(line))  # Es un número directo
+                machine_code.append(translate_a_instruction(line))  # Es un numero directo
             else:
                 if symbol not in symbol_table:
                     symbol_table[symbol] = ram_address
@@ -168,7 +168,7 @@ def second_pass(lines):
 
 ### Paso 5: Proceso completo de assembler
 
-Finalmente, unimos todo el proceso en una función que lea el archivo `.asm`, maneje etiquetas y variables, y genere el archivo `.hack`.
+Finalmente, unimos todo el proceso en una funcion que lea el archivo `.asm`, maneje etiquetas y variables, y genere el archivo `.hack`.
 
 ```python
 def assemble(file_path):
@@ -189,4 +189,4 @@ def assemble(file_path):
     print(f'Archivo {output_file} generado')
 ```
 
-El ensamblador generará un archivo `.hack` con el código binario correspondiente
+El ensamblador generara un archivo `.hack` con el codigo binario correspondiente
