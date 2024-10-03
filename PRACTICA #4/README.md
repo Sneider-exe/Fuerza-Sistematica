@@ -1,4 +1,3 @@
-
 # Práctica #4: Proyecto 6 - Ensamblador para el computador Hack
 
 Este proyecto consiste en la creacion de un ensamblador que traduce programas escritos en lenguaje ensamblador Hack (.asm) a codigo maquina binario (.hack). El ensamblador Hack es un lenguaje de bajo nivel que interactua directamente con el hardware del computador Hack.
@@ -190,3 +189,14 @@ def assemble(file_path):
 ```
 
 El ensamblador generara un archivo `.hack` con el codigo binario correspondiente
+
+## Teniendo en cuenta las características del ensamblador, ¿Cuál es la principal limitante que observan? Justifique su respuesta.
+
+La principal limitante fue no poder probar el ensamblador directamente en un simulador o entorno real. Como no se podía ejecutar el código para verificar si funcionaba correctamente, confiar solo en la teoría y la lógica del código, sin tener certeza de que cada parte funcionaría como se espera. Lo cual llego a ser un poco complicado porque es mas facil poder depurar el codigo viendo paso por paso como se comporta la traduccion para poder revisar los errores que hayan por el camino.
+
+## BONUS: ¿Por qué es tan importante el ensamblador?
+
+El ensamblador es una pieza fundamental en el mundo de la programación, ya que es un puente entre los lenguajes de programación de alto nivel y el hardware, permite una gran flexibilidad y control sobre los recursos del equipo. Esto hace que sea útil en aplicaciones como sistemas embebidos, sistemas operativos y controladores de dispositivos, donde la optimización del rendimiento es muy importante.
+
+Además, el ensamblador es usualmente el elegido en situaciones donde la precisión y la velocidad son fundamentales. Como este puede aprovechar al máximo las capacidades del hardware sin sobrecargar como en el caso de los lenguajes de alto nivel, es ideal para áreas críticas donde cada milisegundo y cada byte son importantes
+
