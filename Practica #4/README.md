@@ -110,4 +110,4 @@ def assemble(file_path):
 
 ### Resultado final
 
-El ensamblador generará un archivo `.hack` con el código binario correspondiente.
+El ensamblador generará un archivo `.hack` con el código binario que genera el programa como traduccion.
