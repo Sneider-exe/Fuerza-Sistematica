@@ -1,9 +1,7 @@
 
-# Proyecto 6 - Nand2Tetris: Ensamblador para el computador Hack
+# Ensamblador para el computador Hack
 
 Este proyecto consiste en la creación de un ensamblador que traduce programas escritos en lenguaje ensamblador Hack (.asm) a código máquina binario (.hack). El ensamblador Hack es un lenguaje de bajo nivel que interactúa directamente con el hardware del computador Hack.
-
-## Descripción del proyecto
 
 El proyecto tiene dos pasos:
 
