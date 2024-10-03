@@ -5,25 +5,23 @@ Este proyecto consiste en la creación de un ensamblador que traduce programas e
 
 ## Descripción del proyecto
 
-El proyecto se desarrolla en dos fases:
+El proyecto tiene dos pasos:
 
-1. **Fase 1**: Implementación de un ensamblador que maneje instrucciones sin símbolos (instrucciones A y C básicas).
-2. **Fase 2**: Extender el ensamblador para manejar símbolos (variables y etiquetas).
+1. **Paso 1**: Implementar un ensamblador que maneje instrucciones sin simbolos (instrucciones A y C basicas).
+2. **Paso 2**: Extender el ensamblador para manejar simbolos (variables y etiquetas).
 
 El ensamblador leerá un archivo `.asm` de entrada y generará un archivo `.hack` de salida con el código binario.
 
-## Estructura del programa
-
 ### Paso 1: Leer el archivo `.asm`
 
-Primero, necesitamos leer el archivo `.asm`, eliminando los comentarios y líneas vacías. La función `read_asm_file` hace esto:
+Primero, leer el archivo `.asm`,eliminar comentarios y lineas vacias para esto esta la funcion `read_asm_file()`.
 
 ```python
 def read_asm_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
     
-    # Filtramos los comentarios y las líneas vacías
+    # Eliminamos los comentarios y las líneas vacías
     clean_lines = []
     for line in lines:
         # Quitamos los espacios y comentarios
@@ -54,7 +52,6 @@ Tablas de traducción:
 comp_table = {
     '0':   '0101010', '1':   '0111111', '-1':  '0111010',
     'D':   '0001100', 'A':   '0110000', '!D':  '0001101',
-    # Agrega más entradas según sea necesario
 }
 
 dest_table = {
@@ -88,7 +85,7 @@ def translate_c_instruction(instruction):
 
 ### Paso 4: Proceso completo de ensamblaje
 
-Finalmente, unimos todo el proceso en una función que lea el archivo `.asm`, traduzca las instrucciones y genere el archivo `.hack`.
+Unir todo lo hecho en una función que lea el archivo `.asm`, traduzca las instrucciones y genere el archivo `.hack`.
 
 ```python
 def translate_instruction(instruction):
@@ -112,20 +109,7 @@ def assemble(file_path):
     print(f'Archivo {output_file} generado exitosamente.')
 ```
 
-### Paso 5: Pruebas
-
-Prueba el ensamblador con archivos `.asm` como `Add.asm`:
-
-```asm
-@2
-D=A
-@3
-D=D+A
-@0
-M=D
-```
 
 ### Resultado final
 
-El ensamblador generará un archivo `.hack` con el código binario correspondiente. Puedes verificar el funcionamiento usando el simulador del computador Hack proporcionado en el curso.
-
+El ensamblador generará un archivo `.hack` con el código binario correspondiente.
