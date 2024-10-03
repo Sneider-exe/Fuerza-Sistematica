@@ -1,5 +1,5 @@
 
-# Proyecto 6: Ensamblador para el computador Hack
+# Practia #4: Proyecto 6 - Ensamblador para el computador Hack
 
 Este proyecto consiste en la creacion de un ensamblador que traduce programas escritos en lenguaje ensamblador Hack (.asm) a codigo maquina binario (.hack). El ensamblador Hack es un lenguaje de bajo nivel que interactua directamente con el hardware del computador Hack.
 
